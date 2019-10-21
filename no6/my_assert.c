@@ -2,6 +2,7 @@
 #include <string.h>
 #include <assert.h>
 #include <stdlib.h>
+#define NDEBUG
 
 void _my_assert(const char *, char *, unsigned int, const char *);
 #define my_assert(expr){\
@@ -10,6 +11,7 @@ void _my_assert(const char *, char *, unsigned int, const char *);
 	else\
 		_my_assert(#expr, __FILE__, __LINE__, __func__);\
 }
+
 
 void _my_assert(const char *assertion, char *file, unsigned int line, const char *func){
 	fflush(stdout);
